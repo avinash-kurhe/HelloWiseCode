@@ -1,0 +1,342 @@
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode
+$ git --version
+git version 2.41.0.windows.3
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode
+$ git config --global user.name "avinash-kurhe"
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode
+$ git config --global user.email "kurheavinash@gmail.com"
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode
+$ mkdir myproject
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode
+$ cd myproject/
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject
+$ git init
+Initialized empty Git repository in D:/Windchill Docs/GitCasesCode/myproject/.git/
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ ls
+hello.html  index.html.txt
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.html
+        index.html.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git add hello.html
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html.txt
+
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git add -all
+error: did you mean `--all` (with two dashes)?
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git add --all
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.html
+        new file:   index.html.txt
+
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git commit -m "First check commit message"
+[master (root-commit) 8fa6469] First check commit message
+ 2 files changed, 24 insertions(+)
+ create mode 100644 hello.html
+ create mode 100644 index.html.txt
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git status --short
+ M hello.html
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git commit -a -m "Updated hello.html with new line"
+[master 66fbd01] Updated hello.html with new line
+ 1 file changed, 1 insertion(+)
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git log
+commit 66fbd0199059a174fb59fe6a5942cfad155545fb (HEAD -> master)
+Author: avinash-kurhe <kurheavinash@gmail.com>
+Date:   Mon Aug 14 15:29:45 2023 +0530
+
+    Updated hello.html with new line
+
+commit 8fa64690b43d7a77d2bfc6792dff9706d3c2cf1b
+Author: avinash-kurhe <kurheavinash@gmail.com>
+Date:   Mon Aug 14 15:26:24 2023 +0530
+
+    First check commit message
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git help --all
+See 'git help <command>' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                     Add file contents to the index
+   am                      Apply a series of patches from a mailbox
+   archive                 Create an archive of files from a named tree
+   bisect                  Use binary search to find the commit that introduced a bug
+   branch                  List, create, or delete branches
+   bundle                  Move objects and refs by archive
+   checkout                Switch branches or restore working tree files
+   cherry-pick             Apply the changes introduced by some existing commits
+   citool                  Graphical alternative to git-commit
+   clean                   Remove untracked files from the working tree
+   clone                   Clone a repository into a new directory
+   commit                  Record changes to the repository
+   describe                Give an object a human readable name based on an available ref
+   diff                    Show changes between commits, commit and working tree, etc
+   fetch                   Download objects and refs from another repository
+   format-patch            Prepare patches for e-mail submission
+   gc                      Cleanup unnecessary files and optimize the local repository
+   gitk                    The Git repository browser
+   grep                    Print lines matching a pattern
+   gui                     A portable graphical interface to Git
+   init                    Create an empty Git repository or reinitialize an existing one
+   log                     Show commit logs
+   maintenance             Run tasks to optimize Git repository data
+   merge                   Join two or more development histories together
+...skipping...
+   modules                 Defining submodule properties
+   repository-layout       Git Repository Layout
+   revisions               Specifying revisions and ranges for Git
+
+Developer-facing file formats, protocols and other interfaces
+   format-bundle           The bundle file format
+   format-chunk            Chunk-based file formats
+   format-commit-graph     Git commit-graph format
+   format-index            Git index format
+   format-pack             Git pack format
+   format-signature        Git cryptographic signature formats
+   protocol-capabilities   Protocol v0 and v1 capabilities
+   protocol-common         Things common to various protocols
+   protocol-http           Git HTTP-based protocols
+   protocol-pack           How packs are transferred over-the-wire
+   protocol-v2             Git Wire Protocol, Version 2
+
+External commands
+   askpass
+   askyesno
+   credential-helper-selector
+   credential-manager
+   credential-manager-core
+   credential-manager-ui
+   flow
+   lfs
+   update-git-for-windows
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git branch hello-world-images
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git branch
+  hello-world-images
+* master
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        uiv17760.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git add -all
+error: did you mean `--all` (with two dashes)?
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        uiv17760.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git add --all
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+        new file:   uiv17760.png
+
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git commit -m "Added image icon in html"
+[hello-world-images 894716d] Added image icon in html
+ 2 files changed, 2 insertions(+)
+ create mode 100644 uiv17760.png
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ ls
+hello.html  index.html.txt  uiv17760.png
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ ls
+hello.html  index.html.txt
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git checkout -b emergency -fix
+error: unknown switch `i'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge, diff3, or zdiff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git checkout -b emergency -fix
+error: unknown switch `i'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge, diff3, or zdiff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git checkout master
+Already on 'master'
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git merge hello-world-images
+Updating 66fbd01..894716d
+Fast-forward
+ hello.html   |   2 ++
+ uiv17760.png | Bin 0 -> 851 bytes
+ 2 files changed, 2 insertions(+)
+ create mode 100644 uiv17760.png
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$ git branch -d hello-world-images
+Deleted branch hello-world-images (was 894716d).
+
+avinashk20@BSPUNL-18409 MINGW64 /d/Windchill Docs/GitCasesCode/myproject (master)
+$
